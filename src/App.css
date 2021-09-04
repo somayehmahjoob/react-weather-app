@@ -1,38 +1,108 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+:root {
+  --color-body: #d6d7db;
+  --color-main: #2a292c;
+  --border-box: 25px;
+  --font-normal: normal normal bold 14px/1.4em "Montserrat", sans-serif;
+  --font-medium: normal normal bold 16px/1.4em "Montserrat", sans-serif;
+  --font-temp: normal normal normal 52px/1.4em "Montserrat", sans-serif;
+
+  --background-icon: radial-gradient(circle, rgba(254,252,234,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  background-color: #f7f6f9;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: var(--color-main);
+}
+input:hover,
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: var(--color-main);
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--color-body);
+}
+hr {
+  width: 90%;
+  color: #d6d7db;
+}
+.content {
+  margin: 50px auto;
+  max-width: 900px;
+  min-height: 200px;
+  background-color: #fff;
+  border-radius: var(--border-box);
+  padding: 30px;
+}
+.search-form {
+  padding: 10px 2px;
+}
+.search-form form {
+  display: block;
+}
+.search-form i:first-child {
+  font-size: 12px;
+  color: var(--color-icon);
+}
+.search-form input {
+  max-width: 145px;
+  font: var(--font-normal);
+  border: none;
+  margin: 0 5px;
+}
+#submitButton {
+  font-family: FontAwesome;
+}
+.weather-now {
+  padding: 20px;
+}
+.weather-now .weather-icon-now {
+  margin: 30px auto 10px;
+  width: 170px;
+  height: 170px;
+  background: var(--background-icon);  
+  border-radius: 50%;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.weather-now .weather-icon-now img { 
+  width: 150px;
+  height: 150px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-now .weather-temp-now {
+  font: var(--font-temp);
+  margin-bottom: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.weather-now .weather-temp-now span{
+  position: relative;
+  font-size: 25px;
+  font-weight: 500;
+  top: -20px;
 }
-
-.App-link {
-  color: #61dafb;
+.weather-date-now {
+  font: var(--font-medium);
+  color: var(--color-main);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-date-now #weather-time {
+  margin-left: 5px;
+  opacity: 0.8;
 }
+.weather-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: var(--color-main);
+}
+/* .weather-date-now .weather-description {
+  
+} */
