@@ -1,7 +1,8 @@
 import React from 'react';
 import { IconContext } from "react-icons";
-import { FaSearchLocation, FaWind, FaCloudversify } from 'react-icons/fa';
+import { FaWind, FaCloudversify } from 'react-icons/fa';
 import cloudy from './cloudy.png';
+import searchIcon from './search-icon.png';
 
 import './App.css';
 
@@ -15,9 +16,7 @@ export default function Weather(){
               <i className="fas fa-search"></i>
               <input type="search" placeholder="Search for place.." />
               <button id="submitButton">
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaSearchLocation />
-                </IconContext.Provider>            
+                <img src={searchIcon} alt="search" className="img-search"/>          
               </button>
             </form>
           </div>
