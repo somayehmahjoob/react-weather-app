@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconContext } from "react-icons";
-import { FaWind, FaCloudversify } from 'react-icons/fa';
+import { WiHail, WiMoonAltNew, WiDaySnowWind, WiDayWindy, WiDaySnow } from "react-icons/wi";
 import cloudy from './cloudy.png';
 import searchIcon from './search-icon.png';
 
@@ -10,7 +10,7 @@ import './App.css';
 export default function Weather(){
   return(
     <div className="row content">
-        <div className="col-md-3 p-0">
+        <div className="col-md-3 left-side">
           <div className="search-form">
             <form action="#">
               <i className="fas fa-search"></i>
@@ -31,20 +31,20 @@ export default function Weather(){
               <hr />
               <div className="weather-description">
                 <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaCloudversify />
+                  <WiDayWindy />
                 </IconContext.Provider>                
                 <span id="weather-description">Mosley cloudy</span>
               </div>
               <div className="weather-wind">                
                 <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                  <WiHail />
                 </IconContext.Provider>
                 <span id="weather-wind">Wind</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-md-9">
+        <div className="col-md-9 right-side">
           <div className="row header-info">
             <div className="col-md-6">
               <span className="deactivate">Today</span>
@@ -58,47 +58,49 @@ export default function Weather(){
           <div className="row weather-forecast-days">
             <ul>
               <li className="forecast-day">
-                <div>Sun</div>
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                <div id="day-of-week">Sun</div>
+                <IconContext.Provider value={{ className: "weather-forecast-icon" }}>
+                  <WiHail />
                 </IconContext.Provider>
-                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+                <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
               </li>
               <li className="forecast-day">
-                <div>Sun</div>
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                <div id="day-of-week">Sun</div>
+                <IconContext.Provider value={{ className: "weather-forecast-icon" }}>
+                  <WiDaySnow />
                 </IconContext.Provider>
-                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+                <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
               </li>
               <li className="forecast-day">
-                <div>Sun</div>
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                <div id="day-of-week">Sun</div>
+                <IconContext.Provider value={{ className: "weather-forecast-icon" }}>
+                  <WiDayWindy />
                 </IconContext.Provider>
-                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+                <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
               </li>
               <li className="forecast-day">
-                <div>Sun</div>
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                <div id="day-of-week">Sun</div>
+                <IconContext.Provider value={{ className: "weather-forecast-icon" }}>
+                  <WiMoonAltNew />
                 </IconContext.Provider>
-                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+                <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
               </li>
               <li className="forecast-day">
-                <div>Sun</div>
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                <div id="day-of-week">Sun</div>
+                <IconContext.Provider value={{ className: "weather-forecast-icon" }}>
+                  <WiDayWindy />
                 </IconContext.Provider>
-                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+                <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
               </li>
               <li className="forecast-day">
-                <div>Sun</div>
-                <IconContext.Provider value={{ className: "weather-icon" }}>
-                  <FaWind />
+                <div id="day-of-week">Sun</div>
+                <IconContext.Provider value={{ className: "weather-forecast-icon" }}>
+                  <WiDaySnowWind />
                 </IconContext.Provider>
-                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+                <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
               </li>
+              
+      
             </ul>
           </div>
         </div>

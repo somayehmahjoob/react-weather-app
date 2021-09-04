@@ -1,13 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
 :root {
   --color-body: #d6d7db;
+  --color-right-side: #f7f6f9;
   --color-main: #2a292c;
-  --border-box: 25px;
+  --color-temp :#BFBFBF;
   --font-normal: normal normal bold 14px/1.4em "Montserrat", sans-serif;
   --font-medium: normal normal bold 16px/1.4em "Montserrat", sans-serif;
   --font-temp: normal normal normal 52px/1.4em "Montserrat", sans-serif;
 
-  --background-icon: radial-gradient(circle, rgba(254,252,234,1) 0%, rgba(255,255,255,1) 100%);
+  --background-icon: radial-gradient(
+    circle,
+    rgba(254, 252, 234, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 * {
@@ -38,10 +43,10 @@ hr {
   width: 90%;
   color: #d6d7db;
 }
-ul{
+ul {
   list-style: none;
 }
-ul>li {
+ul > li {
   display: inline-block;
 }
 .content {
@@ -49,8 +54,12 @@ ul>li {
   max-width: 900px;
   min-height: 200px;
   background-color: #fff;
-  border-radius: var(--border-box);
-  padding: 30px;
+  border-radius: 25px;
+}
+.left-side {
+  background: #fff;
+  border-radius: 25px 0 0 25px;
+  padding: 20px 10px;
 }
 .search-form {
   padding: 10px 2px;
@@ -68,7 +77,7 @@ ul>li {
   border: none;
   margin: 0 5px;
 }
-.search-form .img-search{
+.search-form .img-search {
   width: 17px;
   height: 17px;
 }
@@ -82,11 +91,11 @@ ul>li {
   margin: 30px auto 10px;
   width: 170px;
   height: 170px;
-  background: var(--background-icon);  
+  background: var(--background-icon);
   border-radius: 50%;
   text-align: center;
 }
-.weather-now .weather-icon-now img { 
+.weather-now .weather-icon-now img {
   width: 150px;
   height: 150px;
 }
@@ -94,7 +103,7 @@ ul>li {
   font: var(--font-temp);
   margin-bottom: 20px;
 }
-.weather-now .weather-temp-now span{
+.weather-now .weather-temp-now span {
   position: relative;
   font-size: 25px;
   font-weight: 500;
@@ -116,21 +125,26 @@ ul>li {
 /* .weather-date-now .weather-description {
   
 } */
+.right-side {
+  background-color: var(--color-right-side);
+  border-radius: 0 25px 25px 0;
+  padding: 20px 10px;
+}
 .header-info {
   margin: 10px;
 }
 .header-info span {
-  margin: 2px 8px;  
+  margin: 2px 8px;
   font: var(--font-medium);
   border-bottom: 2px solid #2a292c;
   padding-bottom: 2px;
   color: #2a292c;
 }
 .header-info .deactivate {
-  color: var(--color-body); 
+  color: var(--color-body);
   border-bottom: none;
 }
-.header-info a{
+.header-info a {
   width: 25px;
   height: 25px;
   font-size: 12px;
@@ -141,10 +155,43 @@ ul>li {
   text-decoration: none;
   margin: 2px 5px;
 }
-.header-info .active{  
+.header-info .active {
   background: #2a292c;
   color: var(--color-body);
 }
 .weather-forecast-days {
   margin: 20px 10px;
+}
+.weather-forecast-days ul {
+  display: flex;
+  justify-content: space-between;
+}
+.weather-forecast-days .forecast-day {
+  background-color: #fff;
+  padding: 5px 10px;
+  min-width: 92px;
+  margin-right: 10px;
+  font: var(--font-normal);
+  border-radius: 10px;
+  text-align: center;
+}
+.weather-forecast-days .forecast-day #day-of-week {
+  margin: 8px 0;
+
+}
+.weather-forecast-icon {
+  margin: 5px 0; 
+  font-size: 20px;
+  color: var(--color-main);
+}
+.forecast-temp {
+  font-size: 14px;
+  margin: 8px 0;
+  color: var(--color-temp);
+}
+.forecast-temp span:first-child{
+  margin-right: 5px;
+}
+.forecast-temp #temp-max {
+  color: #2a292c;
 }
