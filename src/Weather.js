@@ -44,7 +44,64 @@ export default function Weather(){
             </div>
           </div>
         </div>
-        <div className="col-md-9">ddddddd</div>
+        <div className="col-md-9">
+          <div className="row header-info">
+            <div className="col-md-6">
+              <span className="deactivate">Today</span>
+              <span>Week</span>
+            </div>
+            <div className="col-md-6 float-md-end">
+              <a href="/" className="float-md-end" id="Fahrenheit">°F</a>
+              <a href="/" className="float-md-end active" id="celsius">°C</a>              
+            </div>
+          </div>
+          <div className="row weather-forecast-days">
+            <ul>
+              <li className="forecast-day">
+                <div>Sun</div>
+                <IconContext.Provider value={{ className: "weather-icon" }}>
+                  <FaWind />
+                </IconContext.Provider>
+                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+              </li>
+              <li className="forecast-day">
+                <div>Sun</div>
+                <IconContext.Provider value={{ className: "weather-icon" }}>
+                  <FaWind />
+                </IconContext.Provider>
+                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+              </li>
+              <li className="forecast-day">
+                <div>Sun</div>
+                <IconContext.Provider value={{ className: "weather-icon" }}>
+                  <FaWind />
+                </IconContext.Provider>
+                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+              </li>
+              <li className="forecast-day">
+                <div>Sun</div>
+                <IconContext.Provider value={{ className: "weather-icon" }}>
+                  <FaWind />
+                </IconContext.Provider>
+                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+              </li>
+              <li className="forecast-day">
+                <div>Sun</div>
+                <IconContext.Provider value={{ className: "weather-icon" }}>
+                  <FaWind />
+                </IconContext.Provider>
+                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+              </li>
+              <li className="forecast-day">
+                <div>Sun</div>
+                <IconContext.Provider value={{ className: "weather-icon" }}>
+                  <FaWind />
+                </IconContext.Provider>
+                <div className="forecast-temp"><span id="temp-min">12°</span><span>-</span><span id="temp-max">18°</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
   
   )
