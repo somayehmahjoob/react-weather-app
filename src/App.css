@@ -195,3 +195,37 @@ ul > li {
 .forecast-temp #temp-max {
   color: #2a292c;
 }
+.weather-today-highlight {
+  margin: 20px 10px;
+}
+.weather-today-highlight .weather-today-title{
+  font: var(--font-medium);
+  margin: 10px;
+}
+.weather-today-highlight .weather-today-highlight-box ul {
+  /* display: flex; */
+  justify-content: center;
+  padding: 0;
+}
+.weather-today-highlight .weather-today-highlight-box ul>li {
+  background-color: #fff;
+  padding: 5px 10px;
+  min-width: 190px;
+  margin: 10px;
+  font: var(--font-normal);
+  border-radius: 10px;
+  min-height: 140px;
+}
+.weather-today-highlight-box .forecast-highlight-title {
+  color: var(--color-temp);
+  margin: 10px 2px;
+}
+.weather-today-highlight-box .forecast-highlight-content {
+  margin: 10px 2px;
+  text-align: center;
+  height: 80px;
+}
+.weather-today-highlight-box .forecast-highlight-footer {
+  margin: 10px 0;
+  font-size: 12px;
+}

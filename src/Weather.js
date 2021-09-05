@@ -98,10 +98,45 @@ export default function Weather(){
                   <WiDaySnowWind />
                 </IconContext.Provider>
                 <div className="forecast-temp"><span id="temp-max">18°</span><span id="temp-min">12°</span></div>
-              </li>
-              
-      
+              </li>     
             </ul>
+          </div>
+          <div className="weather-today-highlight">
+              <div className="weather-today-title">Today's Highlights</div>
+              <div className="weather-today-highlight-box">
+                <ul>
+                  <li>
+                    <div className="forecast-highlight-title">UV Index</div>
+                    <div className="forecast-highlight-content">photo or iccon</div>
+                    <div className="forecast-highlight-footer">footer</div>
+                  </li>
+                  <li>
+                    <div className="forecast-highlight-title">Win Status</div>
+                    <div className="forecast-highlight-content">photo or iccon</div>
+                    <div className="forecast-highlight-footer">footer</div>
+                  </li>
+                  <li>
+                    <div className="forecast-highlight-title">Sunrise & Sunset</div>
+                    <div className="forecast-highlight-content">photo or iccon</div>
+                    <div className="forecast-highlight-footer">footer</div>
+                  </li>
+                  <li>
+                    <div className="forecast-highlight-title">Humidity</div>
+                    <div className="forecast-highlight-content">photo or iccon</div>
+                    <div className="forecast-highlight-footer">footer</div>
+                  </li>
+                  <li>
+                    <div className="forecast-highlight-title">Visibility</div>
+                    <div className="forecast-highlight-content">photo or iccon</div>
+                    <div className="forecast-highlight-footer">footer</div>
+                  </li>
+                  <li>
+                    <div className="forecast-highlight-title">Air Quality</div>
+                    <div className="forecast-highlight-content">photo or iccon</div>
+                    <div className="forecast-highlight-footer">footer</div>
+                  </li>
+                </ul>
+              </div>
           </div>
         </div>
       </div>
