@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { IconContext } from "react-icons";
 import { WiHail, WiMoonAltNew, WiDaySnowWind, WiDayWindy, WiDaySnow } from "react-icons/wi";
 import cloudy from './cloudy.png';
@@ -7,7 +7,8 @@ import searchIcon from './search-icon.png';
 import './App.css';
 
 
-export default function Weather(){
+export default function Weather(props){
+  const [city, setCity] = useState(props.city);
   return(
     <div className="row content">
         <div className="col-md-3 left-side">
@@ -41,6 +42,7 @@ export default function Weather(){
                 </IconContext.Provider>
                 <span id="weather-wind">Wind</span>
               </div>
+              <div className="weather-city-name">{props.city}</div>
             </div>
           </div>
         </div>
