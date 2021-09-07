@@ -239,3 +239,8 @@ ul > li {
   margin: 10px 0;
   font-size: 12px;
 }
+.spinnerDiv {
+  margin:20% auto;
+  color: #2a292c;
+  text-align: center;
+}

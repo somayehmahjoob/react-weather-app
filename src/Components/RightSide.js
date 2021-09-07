@@ -1,6 +1,6 @@
 import React from "react";
 import WeatherForecast from './WeatherForecast';
-import WeatherHighlight from './WeatherHighlight';
+import WeatherHighlight from "./WeatherHighlight";
 
 export default function RightSide(){
   return(

@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import { IconContext } from "react-icons";
-import { WiHail, WiDayWindy } from "react-icons/wi";
-import cloudy from './cloudy.png';
-import searchIcon from './search-icon.png';
-import RightSide from './RightSide';
+import WeatherInfo from './WeatherInfo';
+import searchIcon from '../images/search-icon.png';
+import { SpinnerDiamond } from 'spinners-react';
+import RightSide from '../Components/RightSide';
 
-import './App.css';
+import '../App.css';
 
 
 export default function Weather(props){
   let [data, setData] = useState({ ready: false });
   const [city, setCity] = useState(props.cityName);
-  let [message, setMessage] = useState("Loading");
 
   function showWeather(response) {
     console.log(response.data);
@@ -20,8 +18,7 @@ export default function Weather(props){
       ready:true,
       city : response.data.name,
       temp: response.data.main.temp,
-      dateOfWeek : "Wen",
-      dateOfHour:"20:25",
+      date : new Date(response.data.dt * 1000),
       speed: response.data.wind.speed,
       description: response.data.weather[0].description,
       main: response.data.weather[0].main,
@@ -35,15 +32,12 @@ export default function Weather(props){
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (city) {
       let unit = "metric";
-      let apiKey = "a7edac7c339e249bf90472e14cc7ec79";
+      let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
       let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
       
       axios.get(apiUrl).then(showWeather);
-    } else {
-      setMessage(`please enter a city name`);
-    }
+    
   }
 
   function handleCityChange(event) {
@@ -66,47 +60,21 @@ export default function Weather(props){
                 </button>
               </form>
             </div>
-            <div className="weather-now">
-              <div className="weather-icon-now">
-                <img src={cloudy} alt="cloudy" id="weather-icon-now" />              
-              </div>
-              <div className="weather-temp-now">{Math.round(data.temp)}°<span>C</span></div>
-              <div className="weather-date-now">
-                <span id="weather-day">{data.dateOfWeek},</span
-                ><span id="weather-time">{data.dateOfHour}</span>
-                <hr />
-                <div className="weather-description">
-                  <IconContext.Provider value={{ className: "weather-icon" }}>
-                    <WiDayWindy />
-                  </IconContext.Provider>                
-                  <span id="weather-description">{data.description}</span>
-                </div>
-                <div className="weather-wind">                
-                  <IconContext.Provider value={{ className: "weather-icon" }}>
-                    <WiHail />
-                  </IconContext.Provider>
-                  <span id="weather-wind">{data.main}</span>
-                </div>
-                <div className="weather-city-name">{data.city}</div>
-              </div>
-            </div>
-          </div>
+            <WeatherInfo weatherInfo={data}/>     
+          </div>  
           <div className="col-md-9 right-side">
             <RightSide />
-          </div>
+        </div>       
       </div>
     )
   }
   else {
     let unit = "metric";    
-    let city = props.cityName;
-    let apiKey = "a7edac7c339e249bf90472e14cc7ec79";
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(showWeather);
-    return(
-
-      
-      <div>{message}</div>
+    return(      
+      <div className="spinnerDiv"><SpinnerDiamond /></div>
     )
   }
   
