@@ -12,6 +12,15 @@ export default function Weather(props){
   let [data, setData] = useState({ ready: false });
   const [city, setCity] = useState(props.cityName);
 
+
+  function search(){
+    let unit = "metric";
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+    
+    axios.get(apiUrl).then(showWeather);
+  }
+
   function showWeather(response) {
     console.log(response.data);
     setData({
@@ -32,11 +41,7 @@ export default function Weather(props){
 
   function handleSubmit(event) {
     event.preventDefault();
-      let unit = "metric";
-      let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
-      
-      axios.get(apiUrl).then(showWeather);
+    search();  
     
   }
 
@@ -52,7 +57,8 @@ export default function Weather(props){
                 <i className="fas fa-search"></i>
                 <input 
                   type="search" 
-                  placeholder="Search for place.."  
+                  placeholder="Search for place.." 
+                  autoFocus="on" 
                   onChange={handleCityChange}
                 />
                 <button type="submit" id="submitButton">
@@ -69,10 +75,7 @@ export default function Weather(props){
     )
   }
   else {
-    let unit = "metric";    
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
-    axios.get(apiUrl).then(showWeather);
+    search();
     return(      
       <div className="spinnerDiv"><SpinnerDiamond /></div>
     )
