@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container-fluid">
-        <Weather city="ahwaz"/>
+        <Weather cityName="ahwaz"/>
       </div>      
     </div>
   );
