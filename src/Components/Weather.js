@@ -35,7 +35,8 @@ export default function Weather(props){
       sunrise :response.data.sys.sunrise,
       sunset: response.data.sys.sunset,
       country: response.data.sys.country,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon:response.data.weather[0].icon,
+      // iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
   }
 

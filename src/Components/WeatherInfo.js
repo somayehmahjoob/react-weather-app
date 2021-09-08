@@ -2,14 +2,14 @@ import React from 'react';
 import { IconContext } from "react-icons";
 import { WiHail, WiDayWindy } from "react-icons/wi";
 import DateComponent from './DateComponent';
-import cloudy from '../images/cloudy.png';
 
 export default function WeatherInfo(props){
   return(
     <div className="WeatherInfo">
       <div className="weather-now">
           <div className="weather-icon-now">
-            <img src={cloudy} alt="cloudy" id="weather-icon-now" />              
+            <img src={`/images/${props.weatherInfo.icon}.png`} alt={props.weatherInfo.description} id="weather-icon-now" />
+            
           </div>
           <div className="weather-temp-now">{Math.round(props.weatherInfo.temp)}°<span>C</span></div>
           <div className="weather-date-now">

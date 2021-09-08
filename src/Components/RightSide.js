@@ -3,6 +3,7 @@ import WeatherForecast from './WeatherForecast';
 import WeatherHighlight from "./WeatherHighlight";
 
 export default function RightSide(){
+  
   return(
     <div className="RightSide">
       <div className="row header-info">
@@ -11,7 +12,7 @@ export default function RightSide(){
               <span>Week</span>
             </div>
             <div className="col-md-6 float-md-end">
-              <a href="/" className="float-md-end" id="Fahrenheit">°F</a>
+              <a href="/" className="float-md-end" id="Fahrenheit" >°F</a>
               <a href="/" className="float-md-end active" id="celsius">°C</a>              
             </div>
           </div>

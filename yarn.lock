@@ -2228,6 +2228,11 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+animated-weather-icon@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/animated-weather-icon/-/animated-weather-icon-1.0.10.tgz#7815ec7c0790c4acf69f630fb4fcdddfde862e81"
+  integrity sha512-sqQyMd7EQKaGCMiGHGnyQGMDpAgrHGVh7Q8QxWEao79M6pR3HTOJbuC5771PAXEgE9AJYnsLPIyy5GqnW/7pZg==
+
 ansi-colors@^3.0.0:
   version "3.2.4"
   resolved "https://registry.npmjs.org/ansi-colors/-/ansi-colors-3.2.4.tgz"
