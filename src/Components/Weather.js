@@ -13,26 +13,21 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.cityName);
   const [unit, setUnit] = useState("metric");
 
-  function showFahrenheit(event) {
-    event.preventDefault();
-    setUnit("imperial");
-    search();
-    console.log(unit);
-  }
-  function showCelsius(event) {
-    event.preventDefault();
-    setUnit("metric");
-    search();
-    console.log(unit);
-  }
+  
 
-  function search() {
-    let units = unit;
-    console.log(units);
+  function search() {    
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+    let apiUrl = "";
+    if(unit === "metric"){
+      apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+      console.log(apiUrl);
+      axios.get(apiUrl).then(showWeather);
+    }else {
+      apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+      console.log(apiUrl);
+      axios.get(apiUrl).then(showWeather);
+    }
 
-    axios.get(apiUrl).then(showWeather);
   }
 
   function showWeather(response) {
@@ -62,6 +57,16 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("imperial");
+    search();
+  }
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("metric");
+    search();
+  }
   if (data.ready) {
     return (
       <div className="row content">
@@ -89,10 +94,10 @@ export default function Weather(props) {
               <span>Week</span>
             </div>
             <div className="col-md-6 float-md-end">
-              <a href="/" className="float-md-end" onClick={showFahrenheit}>
+              <a href="/" className="float-md-end" onClick ={showFahrenheit}>
                 °F
               </a>
-              <a href="/" className="float-md-end active" onClick={showCelsius}>
+              <a href="/" className="float-md-end active" onClick ={showCelsius}>
                 °C
               </a>
             </div>
