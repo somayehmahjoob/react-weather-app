@@ -109,6 +109,9 @@ ul > li {
   font-weight: 500;
   top: -20px;
 }
+.weather-temp-now a {
+  text-decoration: none;  
+}
 .weather-date-now {
   font: var(--font-medium);
   color: var(--color-main);

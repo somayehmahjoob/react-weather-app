@@ -11,24 +11,30 @@ import "../App.css";
 export default function Weather(props) {
   let [data, setData] = useState({ ready: false });
   const [city, setCity] = useState(props.cityName);
-  const [unit, setUnit] = useState("metric");
 
-  
-
-  function search() {    
+  function search() {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = "";
-    if(unit === "metric"){
-      apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-      console.log(apiUrl);
-      axios.get(apiUrl).then(showWeather);
-    }else {
-      apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
-      console.log(apiUrl);
-      axios.get(apiUrl).then(showWeather);
-    }
-
+    let unit = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+    axios.get(apiUrl).then(showWeather);
   }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+  // function showFahrenheit(event) {
+  //   event.preventDefault();
+  //   setUnit("imperial");
+  //   setData({
+  //     ready: false,
+  //   });
+  // }
+  // function showCelsius(event) {
+  //   event.preventDefault();
+  //   setUnit("metric");
+  //   setData({
+  //     ready: false,
+  //   });
+  // }
 
   function showWeather(response) {
     console.log(response.data);
@@ -54,19 +60,6 @@ export default function Weather(props) {
     search();
   }
 
-  function handleCityChange(event) {
-    setCity(event.target.value);
-  }
-  function showFahrenheit(event) {
-    event.preventDefault();
-    setUnit("imperial");
-    search();
-  }
-  function showCelsius(event) {
-    event.preventDefault();
-    setUnit("metric");
-    search();
-  }
   if (data.ready) {
     return (
       <div className="row content">
@@ -94,10 +87,10 @@ export default function Weather(props) {
               <span>Week</span>
             </div>
             <div className="col-md-6 float-md-end">
-              <a href="/" className="float-md-end" onClick ={showFahrenheit}>
+              <a href="/" className="float-md-end">
                 °F
               </a>
-              <a href="/" className="float-md-end active" onClick ={showCelsius}>
+              <a href="/" className="float-md-end active">
                 °C
               </a>
             </div>
