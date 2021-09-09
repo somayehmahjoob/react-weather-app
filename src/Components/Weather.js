@@ -47,8 +47,9 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       main: response.data.weather[0].main,
       humidity: response.data.main.humidity,
-      sunrise: response.data.sys.sunrise,
-      sunset: response.data.sys.sunset,
+      visibility: response.data.visibility,
+      sunrise:new Date(response.data.sys.sunrise * 1000),
+      sunset:new Date (response.data.sys.sunset * 1000),
       country: response.data.sys.country,
       icon: response.data.weather[0].icon,
       // iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -99,7 +100,7 @@ export default function Weather(props) {
             <WeatherForecast />
           </div>
           <div className="weather-today-highlight">
-            <WeatherHighlight />
+            <WeatherHighlight weatherInfo={data} />
           </div>
         </div>
       </div>
