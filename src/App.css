@@ -51,7 +51,7 @@ ul > li {
   display: inline-block;
 }
 .content {
-  margin: 50px auto;
+  margin: 50px auto 10px;
   max-width: 900px;
   min-height: 200px;
   background-color: #fff;
@@ -272,4 +272,10 @@ ul > li {
   margin:20% auto;
   color: #2a292c;
   text-align: center;
+}
+.footer {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
