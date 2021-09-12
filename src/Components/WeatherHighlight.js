@@ -1,17 +1,25 @@
 import React from "react";
+import { ArrowDownCircleFill, ArrowUpCircleFill } from "react-bootstrap-icons";
 import SunTime from "./SunTime";
 
-export default function WeatherHighlight(props){
-
+export default function WeatherHighlight(props) {
   return (
     <div className="WeatherHighlight">
       <div className="weather-today-title">Today's Highlights</div>
       <div className="weather-today-highlight-box">
         <ul>
           <li>
-            <div className="forecast-highlight-title">UV Index</div>
-            <div className="forecast-highlight-content">photo or iccon</div>
-            <div className="forecast-highlight-footer">footer</div>
+            <div className="forecast-highlight-title">Temp Max & Min</div>
+            <div className="forecast-highlight-content">
+              <div className="icon-highlight-up">
+                <ArrowUpCircleFill className="icon-sun-time" />
+                {Math.round(props.weatherInfo.tempMax)}
+              </div>
+              <div className="icon-highlight-down">
+                <ArrowDownCircleFill className="icon-sun-time" />
+                {Math.round(props.weatherInfo.tempMin)}
+              </div>
+            </div>
           </li>
           <li>
             <div className="forecast-highlight-title">Win Status</div>
@@ -21,15 +29,15 @@ export default function WeatherHighlight(props){
                 <span className="downIcon">Km/h</span>
               </span>
             </div>
-            <div className="forecast-highlight-footer">footer</div>
           </li>
           <li>
             <div className="forecast-highlight-title">Sunrise & Sunset</div>
-            <SunTime
-              sunrise={props.weatherInfo.sunrise}
-              sunset={props.weatherInfo.sunset}
-            />
-            <div className="forecast-highlight-footer">footer</div>
+            <div className="forecast-highlight-content">
+              <SunTime
+                sunrise={props.weatherInfo.sunrise}
+                sunset={props.weatherInfo.sunset}
+              />
+            </div>
           </li>
           <li>
             <div className="forecast-highlight-title">Humidity</div>
@@ -39,7 +47,6 @@ export default function WeatherHighlight(props){
                 <span className="upIcon">%</span>
               </span>
             </div>
-            <div className="forecast-highlight-footer">footer</div>
           </li>
           <li>
             <div className="forecast-highlight-title">Visibility</div>
@@ -49,12 +56,15 @@ export default function WeatherHighlight(props){
                 <span className="downIcon">Km/h</span>
               </span>
             </div>
-            <div className="forecast-highlight-footer">footer</div>
           </li>
           <li>
-            <div className="forecast-highlight-title">Air Quality</div>
-            <div className="forecast-highlight-content">photo or iccon</div>
-            <div className="forecast-highlight-footer">footer</div>
+            <div className="forecast-highlight-title">Country & City</div>
+            <div className="forecast-highlight-content">
+              {props.weatherInfo.city}
+              <span className="highlight-country">
+                {props.weatherInfo.country}
+              </span>
+            </div>
           </li>
         </ul>
       </div>

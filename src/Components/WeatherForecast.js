@@ -10,7 +10,7 @@ export default function WeatherForecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.coordinate]);
+  }, [props.coordinate])
 
   function showWeatherForecast(response) {
     setForecastWeather(response.data.daily);    
@@ -35,7 +35,7 @@ export default function WeatherForecast(props) {
         {forecastWeather.map((dailyWeather , index)=>{          
           if(index >=1 && index <=6){
             return (
-              <div key={index}>
+              <div className="daily-show" key={index}>
                 <WeatherForecastDay data={dailyWeather} />
               </div>
             );

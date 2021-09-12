@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownCircleFill, ArrowUpCircleFill } from "react-bootstrap-icons";
+import {BrightnessAltHighFill, BrightnessAltLowFill } from "react-bootstrap-icons";
 
 export default function SunTime(props){
   let sunriseHour =props.sunrise.getHours(); 
@@ -23,18 +23,16 @@ export default function SunTime(props){
 
   return (
     <div className="SunTime">
-      <div className="forecast-highlight-content">
         <div className="sunrise">
-          <ArrowUpCircleFill className="icon-sun-time" />
+          <BrightnessAltHighFill className="icon-sun-time" />
           <span>
             {sunriseHour}:{sunriseMinutes} AM
           </span>
         </div>
         <div className="sunset">
-          <ArrowDownCircleFill className="icon-sun-time" />
+          <BrightnessAltLowFill className="icon-sun-time" />
           <span>{sunsetHour}:{sunsetMinutes} PM</span>
         </div>
-      </div>
     </div>
   );
 }

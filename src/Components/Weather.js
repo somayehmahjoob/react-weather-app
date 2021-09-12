@@ -11,46 +11,37 @@ import "../App.css";
 export default function Weather(props) {
   let [data, setData] = useState({ ready: false });
   const [city, setCity] = useState(props.cityName);
-  
+
 
   function search() {
     let apiKey = "469611e51569c75f911c80b0cea9dfa5";
-    let unit = "metric";
+    let unit = 'metric';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(showWeather);
   }
+
   function handleCityChange(event) {
     setCity(event.target.value);
   }
-  // function showFahrenheit(event) {
-  //   event.preventDefault();
-  //   setUnit("imperial");
-  //   setData({
-  //     ready: false,
-  //   });
-  // }
-  // function showCelsius(event) {
-  //   event.preventDefault();
-  //   setUnit("metric");
-  //   setData({
-  //     ready: false,
-  //   });
-  // }
+  
+ 
 
   function showWeather(response) {
     setData({
       ready: true,
       city: response.data.name,
       temp: response.data.main.temp,
-      coordinates : response.data.coord,
+      tempMin: response.data.main.temp_min,
+      tempMax: response.data.main.temp_max,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       speed: response.data.wind.speed,
       description: response.data.weather[0].description,
       main: response.data.weather[0].main,
       humidity: response.data.main.humidity,
       visibility: response.data.visibility,
-      sunrise:new Date(response.data.sys.sunrise * 1000),
-      sunset:new Date (response.data.sys.sunset * 1000),
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
       country: response.data.sys.country,
       icon: response.data.weather[0].icon,
       // iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -89,7 +80,7 @@ export default function Weather(props) {
               <span>Week</span>
             </div>
             <div className="col-md-6 float-md-end">
-              <a href="/" className="float-md-end">
+              <a href="/" className="float-md-end" >
                 °F
               </a>
               <a href="/" className="float-md-end active">

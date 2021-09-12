@@ -48,7 +48,7 @@ ul {
   padding: 0;
 }
 ul > li {
-  display: inline-block;
+  display: inline-grid;
 }
 .content {
   margin: 50px auto 10px;
@@ -177,15 +177,16 @@ ul > li {
 .weather-forecast-days {
   margin: 20px 10px;
 }
-.weather-forecast-days ul {
-  display: flex;
+.weather-forecast-days ul>div {
+  display: inline-flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .weather-forecast-days .forecast-day {
   background-color: #fff;
   padding: 5px 10px;
   min-width: 92px;
-  margin-right: 10px;
+  margin-right: 9px;
   font: var(--font-normal);
   border-radius: 10px;
   text-align: center;
@@ -253,16 +254,23 @@ ul > li {
   font-size: 14px;
   margin-left: 4px;
 }
-.sunrise,.sunset {
-  margin: 10px 5px;
+.sunrise,.sunset,.icon-highlight-up,.icon-highlight-down {
+  margin: 0px 5px;
 }
-.sunset {
+.sunset,.icon-highlight-down {
   margin-top: 20px;
 }
 .icon-sun-time {
   font-size: 22px;
   color: #fbba28;
   margin-right: 10px;
+}
+.highlight-country {
+  font-size: 12px;
+  position: relative;
+  bottom: -5px;
+  margin-left: 5px;
+  color: #fbba28;
 }
 .weather-today-highlight-box .forecast-highlight-footer {
   margin: 10px 0;
