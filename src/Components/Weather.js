@@ -11,9 +11,10 @@ import "../App.css";
 export default function Weather(props) {
   let [data, setData] = useState({ ready: false });
   const [city, setCity] = useState(props.cityName);
+  
 
   function search() {
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiKey = "469611e51569c75f911c80b0cea9dfa5";
     let unit = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(showWeather);
@@ -37,11 +38,11 @@ export default function Weather(props) {
   // }
 
   function showWeather(response) {
-    console.log(response.data);
     setData({
       ready: true,
       city: response.data.name,
       temp: response.data.main.temp,
+      coordinates : response.data.coord,
       date: new Date(response.data.dt * 1000),
       speed: response.data.wind.speed,
       description: response.data.weather[0].description,
@@ -97,7 +98,7 @@ export default function Weather(props) {
             </div>
           </div>
           <div className="row weather-forecast-days">
-            <WeatherForecast />
+            <WeatherForecast coordinate={data.coordinates} />
           </div>
           <div className="weather-today-highlight">
             <WeatherHighlight weatherInfo={data} />
