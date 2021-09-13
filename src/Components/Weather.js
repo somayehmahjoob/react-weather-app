@@ -79,14 +79,14 @@ export default function Weather(props) {
               <span className="deactivate">Today</span>
               <span>Week</span>
             </div>
-            <div className="col-md-6 float-md-end">
+            {/* <div className="col-md-6 float-md-end">
               <a href="/" className="float-md-end" >
                 °F
               </a>
               <a href="/" className="float-md-end active">
                 °C
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="row weather-forecast-days">
             <WeatherForecast coordinate={data.coordinates} />
